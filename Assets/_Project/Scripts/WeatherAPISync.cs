@@ -19,7 +19,6 @@ public class WeatherAPISync : MonoBehaviour
 
     [SerializeField] private Text timeValue;
     [SerializeField] private Text temperatureValue;
-    [SerializeField] private Text humidityValue;
     [SerializeField] private Text windSpeedValue;
     [SerializeField] private Text windDirectionValue;
 
@@ -74,7 +73,7 @@ public class WeatherAPISync : MonoBehaviour
 
     private void UpdateTime()
     {
-        timeValue.text = DateTime.Now.ToString("HH:mm tt", CultureInfo.InvariantCulture);
+        timeValue.text = DateTime.Now.ToString("h:mmtt", CultureInfo.InvariantCulture);
     }
 
     IEnumerator RefreshWeatherData()
@@ -104,12 +103,11 @@ public class WeatherAPISync : MonoBehaviour
     {
         float tempFloat = float.Parse(xmlDoc.SelectSingleNode("cities/list/item/temperature/@value").InnerText);
         int intTemp = int.Parse(Mathf.Round(tempFloat).ToString().Split('.')[0]);
-        temperatureValue.text = intTemp.ToString() + "°";
+        temperatureValue.text = intTemp.ToString() + "°C";
         float windSpeedFloat = float.Parse(xmlDoc.SelectSingleNode("cities/list/item/wind/speed/@value").InnerText) / 1000 * 60 * 60;
         int intWindSpeed = int.Parse(Mathf.Round(windSpeedFloat).ToString().Split('.')[0]);
-        windSpeedValue.text = intWindSpeed.ToString() + " km/h";
+        windSpeedValue.text = intWindSpeed.ToString() + "KM/H";
         windDirectionValue.text = xmlDoc.SelectSingleNode("cities/list/item/wind/direction/@code").InnerText;
-        humidityValue.text = xmlDoc.SelectSingleNode("cities/list/item/humidity/@value").InnerText + "%";
     }
 
     private void ChangeWind()

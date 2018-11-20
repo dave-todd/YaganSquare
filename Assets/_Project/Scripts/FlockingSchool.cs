@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.AzureSky;
 
 public class FlockingSchool : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class FlockingSchool : MonoBehaviour
     public float Randomness = 10;
     private GameObject[] fishList;
 
+    [Header("Fish Animation Speed")]
+    public float LowestSpeed = 0.85f;
+    public float HighestSpeed = 0.9f;
+
     [Header("Target Specifications")]
     public int MinTargetMoveSpeed = 10;
     public int MaxTargetMoveSpeed = 20;
@@ -28,10 +33,12 @@ public class FlockingSchool : MonoBehaviour
 
     [Header("Tunnelling Specifications")]
     public GameObject TunnelColliderPrefab;
+    public float TunnelColliderRadius;
+    public LayerMask CollisionLayers;
     public int RetryCount = 20;
     private GameObject tunnelCollider;
     private Vector3 OldLocalTarget;
-    private LayerMask tunnelLayer;
+    
     
     [Header("UpdateTime Specifications")]
     public bool UseUpdateTime = false;
@@ -45,50 +52,39 @@ public class FlockingSchool : MonoBehaviour
 
     [Header("Time Of Day")]
     public bool UseTimeOfDay = false;
+    public AzureSkyController SkyController;
+    public GameObject TimeOfDaySpawnPoint;
     public int OnTimeStart = 8;
     public int OffTimeEnd = 17;
-    public FlockingTimeOfDaySpawn TimeOfDaySpawnPoint;
-
+    
     [Header("Model Adjustments")]
     public bool SidewaysFish = false;
 
+    [Header("Development")]
+    public bool UseGizmos = false;
+
     [Header("Internal Use Only")]
     public Vector3 LocalTarget;
-    public Vector3 FlockCenter;
-    public Vector3 FlockVelocity;
     public bool TimeOfDayActive = false;
     private bool ready = false;
 
     public void Start()
     {
         if (TargetResetOnCollision) { CreateTargetCollider(); }
-        if (UseTimeOfDay) { TimeOfDaySpawnPoint.SetSchool(this); }
         fishList = new GameObject[FlockSize];
         CreateFish();
         StartCoroutine(TargetMoving());
-        tunnelLayer = 1 << TunnelColliderPrefab.layer;
         ready = true;
     }
 
     public void Update()
     {
-        if (!ready) { return; }
-
-        Vector3 theCenter = Vector3.zero;
-        Vector3 theVelocity = Vector3.zero;
-
-        foreach (GameObject fish in fishList)
-        {
-            theCenter = theCenter + fish.transform.localPosition;
-            theVelocity = theVelocity + fish.GetComponent<Rigidbody>().velocity;
-        }
-
-        FlockCenter = theCenter / FlockSize;
-        FlockVelocity = theVelocity / FlockSize;
     }
 
     public void OnDrawGizmosSelected()
     {
+        if (!UseGizmos) { return; }
+
         Gizmos.color = new Color(1, 0, 0, 0.5f);
         Gizmos.DrawCube(transform.position, new Vector3(Width * 2, Height * 2, Depth * 2));
         Gizmos.color = new Color(0, 1, 0, 1);
@@ -142,6 +138,12 @@ public class FlockingSchool : MonoBehaviour
         }
     }
 
+    private void ChangeAnimationSpeed(GameObject fish)
+    {
+        Animator anim = fish.GetComponent<Animator>();
+        anim.speed = Random.Range(LowestSpeed, HighestSpeed);
+    }
+
     private void CreateTargetCollider()
     {
         targetCollider = Instantiate(TargetCollisionPrefab, ConvertLocalLocToGlobalLoc(GetRandomLocalLocInTank()), transform.rotation, transform) as GameObject;
@@ -150,14 +152,25 @@ public class FlockingSchool : MonoBehaviour
 
     private void CreateFish()
     {
+        Vector3 spawnPoint;
         OldLocalTarget = GetRandomLocalLocInTank();
+        spawnPoint = ConvertLocalLocToGlobalLoc(OldLocalTarget);
+
+
+        if (UseTimeOfDay)
+        {
+            SetCurrentHour((int)SkyController.timeOfDay.hour);
+            if (!TimeOfDayActive) { spawnPoint = TimeOfDaySpawnPoint.transform.position; }
+        }
+        
         for (var i = 0; i < FlockSize; i++)
         {
             Vector3 randOffset = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
-            Vector3 startPos = ConvertLocalLocToGlobalLoc(OldLocalTarget+ randOffset);
+            Vector3 startPos = spawnPoint + randOffset;
             GameObject fish = Instantiate(FishPrefab, startPos, transform.rotation, transform) as GameObject;
             fish.GetComponent<FlockingFish>().SetSchool(this);
             fishList[i] = fish;
+            ChangeAnimationSpeed(fish);
         }
     }
 
@@ -171,6 +184,7 @@ public class FlockingSchool : MonoBehaviour
         while (true)
         {
             ResetTarget();
+            if (UseTimeOfDay) { SetCurrentHour((int)SkyController.timeOfDay.hour); }
             yield return new WaitForSeconds(Random.Range(MinTargetMoveSpeed, MaxTargetMoveSpeed));
         }
     }
@@ -178,10 +192,6 @@ public class FlockingSchool : MonoBehaviour
     private void TimeOfDayActivate()
     {
         TimeOfDayActive = true;
-        foreach (GameObject fish in fishList)
-        {
-            fish.SetActive(true);
-        }
     }
 
     private void TimeOfDayDeactivate()
@@ -199,7 +209,8 @@ public class FlockingSchool : MonoBehaviour
         }
         else
         {
-            return !Physics.Raycast(ConvertLocalLocToGlobalLoc(OldLocalTarget), ConvertLocalLocToGlobalLoc(LocalTarget), distance, tunnelLayer);
+            bool hit = Physics.Raycast(ConvertLocalLocToGlobalLoc(OldLocalTarget), ConvertLocalLocToGlobalLoc(LocalTarget), distance, CollisionLayers);
+            return !hit;
         }
     }
 
@@ -211,10 +222,11 @@ public class FlockingSchool : MonoBehaviour
     private void CreateTunnel()
     {
         Vector3 centrePoint = Vector3.Lerp(ConvertLocalLocToGlobalLoc(OldLocalTarget), ConvertLocalLocToGlobalLoc(LocalTarget), 0.5f);
-        tunnelCollider = Instantiate(TunnelColliderPrefab, centrePoint, Quaternion.identity, transform);
+        tunnelCollider = Instantiate(TunnelColliderPrefab, centrePoint, Quaternion.identity, transform); 
         tunnelCollider.transform.LookAt(ConvertLocalLocToGlobalLoc(LocalTarget));
         var col = tunnelCollider.transform.GetComponent<CapsuleCollider>();
         col.height = Vector3.Distance(ConvertLocalLocToGlobalLoc(OldLocalTarget), ConvertLocalLocToGlobalLoc(LocalTarget));
+        col.radius = TunnelColliderRadius;
     }
 
 }

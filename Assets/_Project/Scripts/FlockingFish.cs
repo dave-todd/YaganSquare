@@ -8,22 +8,25 @@ public class FlockingFish : MonoBehaviour
     private bool ready = false;
     private float waitTime = 0;
     private float updateTime = 0;
-    
+
     public void Start()
     {
     }
-
     public void FixedUpdate()
     {
         waitTime += Time.deltaTime;
         if (!ready) { return; }
-        FaceForward();
         if (school.UseAvoidance) { CalcAvoidance(); }
         if (school.UseUpdateTime && waitTime < updateTime) { return; }
         waitTime = 0;
         updateTime = Random.Range(school.MinUpdateTime, school.MaxUpdateTime);
         CalcVelocity();
         ClampSpeed();
+    }
+
+    private void Update()
+    {
+        FaceForward();
     }
 
     public void SetSchool(FlockingSchool theSchool)
@@ -40,8 +43,6 @@ public class FlockingFish : MonoBehaviour
 
     private void CalcVelocity()
     {
-        Vector3 flockVelocity = school.FlockVelocity - rigidBody.velocity;
-        Vector3 flockCenter;
         Vector3 follow;
         Vector3 randomize;
         Vector3 velocity;
@@ -49,17 +50,16 @@ public class FlockingFish : MonoBehaviour
         if (!school.UseTimeOfDay || school.TimeOfDayActive)
         { // Follow the Target
             follow = school.LocalTarget - transform.localPosition;
-            flockCenter = school.FlockCenter - transform.localPosition;
             randomize = new Vector3((Random.value * 2) - 1, (Random.value * 2) - 1, (Random.value * 2) - 1);
             randomize.Normalize();
-            velocity = flockCenter + flockVelocity + follow * 2 + randomize * school.Randomness;
+            velocity = rigidBody.velocity + follow * 2 + randomize * school.Randomness;
         }
         else
         { // Follow the SpawnPoint to Despawn via OnTrigger
-            follow = school.TimeOfDaySpawnPoint.transform.position - transform.localPosition;
-            velocity = flockVelocity + follow * 2;
+            follow = school.TimeOfDaySpawnPoint.transform.position - transform.position;
+            velocity = rigidBody.velocity + follow * 2;
         }
-        
+
         rigidBody.velocity = rigidBody.velocity + velocity * Time.deltaTime;
     }
 
@@ -68,7 +68,8 @@ public class FlockingFish : MonoBehaviour
         if (rigidBody.velocity == Vector3.zero) { return; }
         Quaternion lookTarget = Quaternion.LookRotation(rigidBody.velocity);
         if (school.SidewaysFish) { lookTarget = lookTarget * Quaternion.Euler(0f, 90f, 0f); }
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookTarget, school.RotationSpeed);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookTarget, school.RotationSpeed * Time.deltaTime);
     }
 
     private void CalcAvoidance()

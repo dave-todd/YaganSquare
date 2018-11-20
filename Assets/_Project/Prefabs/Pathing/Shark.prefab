@@ -79,9 +79,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4601578785911522}
-  - component: {fileID: 54642614153157908}
   - component: {fileID: 114960757327634656}
-  - component: {fileID: 136146616150150482}
   m_Layer: 0
   m_Name: SharkModel
   m_TagString: Untagged
@@ -495,12 +493,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1677304053082084}
-  m_LocalRotation: {x: 8.6588664e-17, y: 0.71600217, z: 0.69809806, w: -1.0963116e-18}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54130507, y: 0.54130507, z: 0.54130507}
+  m_LocalRotation: {x: 0.000000029802319, y: 0.7160022, z: 0.6980981, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.54130536, y: 0.5413054, z: 0.54130524}
   m_Children: []
-  m_Father: {fileID: 4576732229365632}
-  m_RootOrder: 1
+  m_Father: {fileID: 4601578785911522}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4259018508610400
 Transform:
@@ -651,7 +649,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4399215494993790}
-  - {fileID: 4249091222173718}
   m_Father: {fileID: 4601578785911522}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -680,6 +677,7 @@ Transform:
   m_Children:
   - {fileID: 4632508845891430}
   - {fileID: 4576732229365632}
+  - {fileID: 4249091222173718}
   m_Father: {fileID: 4325466769474132}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -799,21 +797,6 @@ Transform:
   m_Father: {fileID: 4336672480416286}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54642614153157908
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1122171685630734}
-  serializedVersion: 2
-  m_Mass: 200
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!95 &95056654633526730
 Animator:
   serializedVersion: 3
@@ -850,20 +833,11 @@ MonoBehaviour:
   - {fileID: 1449413206072532}
   - {fileID: 1385998095546948}
   - {fileID: 1515673566652078}
+  UseTimeOfDay: 0
+  SkyController: {fileID: 0}
+  OnTimeStart: 8
+  OffTimeEnd: 17
   ReverseFacing: 0
---- !u!136 &136146616150150482
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1122171685630734}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 4.5
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -0.3}
 --- !u!137 &137286306904832014
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

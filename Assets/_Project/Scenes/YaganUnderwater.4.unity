@@ -20,10 +20,10 @@ RenderSettings:
   m_FogDensity: 0.001
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.051740922, g: 0.0862673, b: 0.21323532, a: 1}
-  m_AmbientEquatorColor: {r: 0.051740922, g: 0.0862673, b: 0.21323532, a: 1}
-  m_AmbientGroundColor: {r: 0.051740922, g: 0.0862673, b: 0.21323532, a: 1}
-  m_AmbientIntensity: 0.25
+  m_AmbientSkyColor: {r: 1, g: 0.7515213, b: 0.4852941, a: 1}
+  m_AmbientEquatorColor: {r: 1, g: 0.7515213, b: 0.4852941, a: 1}
+  m_AmbientGroundColor: {r: 1, g: 0.7515213, b: 0.4852941, a: 1}
+  m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: a2bd081d041ac8e4cada7dacc77e93d2, type: 2}
@@ -776,51 +776,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4398640500759484, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.2435512
+      value: -0.2543034
       objectReference: {fileID: 0}
     - target: {fileID: 4398640500759484, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.34654754
+      value: 0.74420375
       objectReference: {fileID: 0}
     - target: {fileID: 4398640500759484, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.09367531
+      value: -0.4632001
       objectReference: {fileID: 0}
     - target: {fileID: 4398640500759484, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.90100646
+      value: -0.40857834
       objectReference: {fileID: 0}
     - target: {fileID: 4262212646832722, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.34830764
+      value: -0.06879089
       objectReference: {fileID: 0}
     - target: {fileID: 4262212646832722, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.30090606
+      value: 0.84837914
       objectReference: {fileID: 0}
     - target: {fileID: 4262212646832722, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.11913494
+      value: -0.51239437
       objectReference: {fileID: 0}
     - target: {fileID: 4262212646832722, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.879741
+      value: -0.11389813
       objectReference: {fileID: 0}
     - target: {fileID: 4515401502374986, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.3483076
+      value: -0.25430337
       objectReference: {fileID: 0}
     - target: {fileID: 4515401502374986, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.30090603
+      value: 0.74420375
       objectReference: {fileID: 0}
     - target: {fileID: 4515401502374986, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.11913493
+      value: -0.46320012
       objectReference: {fileID: 0}
     - target: {fileID: 4515401502374986, guid: cc33cc9b541c0bb4083306e5591a5db1, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.879741
+      value: -0.40857834
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
@@ -835,7 +835,7 @@ Prefab:
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: timeOfDay.hour
-      value: 15.233334
+      value: 10.583333
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
@@ -845,137 +845,137 @@ Prefab:
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: timeOfDay.hourByCurve
-      value: 15.233334
+      value: 10.583333
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: timeOfDay.lst
-      value: 10.966401
+      value: 9.745641
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: sunIntensity
-      value: 0.36089504
+      value: 0.46453035
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: mieColor.r
-      value: 0.99339616
+      value: 0.9971063
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: mieColor.g
-      value: 0.7348021
+      value: 0.88379526
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: mieColor.b
-      value: 0.56730366
+      value: 0.8104006
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: dynamicCloudLayer1Color2.g
-      value: 0.79149467
+      value: 0.9777715
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: dynamicCloudLayer1Color2.b
-      value: 0.5680961
+      value: 0.95395535
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: dynamicCloudLayer1Density
-      value: 0.000009324634
+      value: 0.7500032
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: ambientSkyColor.g
-      value: 0.6613122
+      value: 0.7515213
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: ambientSkyColor.b
-      value: 0.37285244
+      value: 0.4852941
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: ambientEquatorColor.g
-      value: 0.6613122
+      value: 0.7515213
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: ambientEquatorColor.b
-      value: 0.37285244
+      value: 0.4852941
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: ambientGroundColor.g
-      value: 0.6613122
+      value: 0.7515213
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: ambientGroundColor.b
-      value: 0.37285244
+      value: 0.4852941
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: rainColor.r
-      value: 0.6729279
+      value: 0.65177405
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: rainColor.g
-      value: 0.6469854
+      value: 0.65751594
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: rainColor.b
-      value: 0.5610941
+      value: 0.634171
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: snowColor.r
-      value: 0.6729279
+      value: 0.65177405
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: snowColor.g
-      value: 0.6469854
+      value: 0.65751594
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: snowColor.b
-      value: 0.5610941
+      value: 0.634171
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: outputColor1.r
-      value: 0.8950002
+      value: 0.95398784
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: outputColor1.g
-      value: 0.952207
+      value: 0.97905654
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: outputColor2.r
-      value: 0.8950002
+      value: 0.95398784
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: outputColor2.g
-      value: 0.952207
+      value: 0.97905654
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: outputColor3.r
-      value: 0.8950002
+      value: 0.95398784
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: outputColor3.g
-      value: 0.952207
+      value: 0.97905654
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
@@ -1148,7 +1148,7 @@ Prefab:
     - target: {fileID: 108453312593175300, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: m_Intensity
-      value: 0.22040695
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
@@ -1168,7 +1168,7 @@ Prefab:
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
       propertyPath: timeOfDay.dayCycle
-      value: 1440
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 114166796038873176, guid: cc33cc9b541c0bb4083306e5591a5db1,
         type: 2}
@@ -1606,7 +1606,7 @@ MonoBehaviour:
   FlockSize: 12
   MinVelocity: 4
   MaxVelocity: 8
-  RotationSpeed: 1
+  RotationSpeed: 0.1
   Randomness: 10
   MinTargetMoveSpeed: 10
   MaxTargetMoveSpeed: 20
@@ -1622,9 +1622,9 @@ MonoBehaviour:
   UseAvoidance: 0
   AvoidanceDistance: 20
   AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
+  UseTimeOfDay: 1
+  OnTimeStart: 12
+  OffTimeEnd: 24
   TimeOfDaySpawnPoint: {fileID: 0}
   SidewaysFish: 1
   LocalTarget: {x: 0, y: 0, z: 0}
@@ -1940,78 +1940,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 44810013}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &228375641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 228375642}
-  - component: {fileID: 228375643}
-  m_Layer: 0
-  m_Name: MahiMahi School
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &228375642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 228375641}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.8, z: 140}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 678990703}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &228375643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 228375641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c5c829a22f27546b40bb5d8bf1a05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FishPrefab: {fileID: 1135986364035132, guid: 48bc43b0ff5ee794c88660625c2744b8, type: 2}
-  Width: 200
-  Height: 30
-  Depth: 50
-  FlockSize: 10
-  MinVelocity: 4
-  MaxVelocity: 8
-  RotationSpeed: 1
-  Randomness: 10
-  MinTargetMoveSpeed: 10
-  MaxTargetMoveSpeed: 20
-  TargetResetOnCollision: 1
-  TargetCollisionPrefab: {fileID: 1621840299266564, guid: 1d6d0d15fd882f24aad628b2207ff2d6,
-    type: 2}
-  TunnelColliderPrefab: {fileID: 1345833611405910, guid: 65ece9c0c4c3b2a4c93de442b8470d03,
-    type: 2}
-  RetryCount: 20
-  UseUpdateTime: 1
-  MinUpdateTime: 0
-  MaxUpdateTime: 1
-  UseAvoidance: 0
-  AvoidanceDistance: 20
-  AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
-  TimeOfDaySpawnPoint: {fileID: 0}
-  SidewaysFish: 1
-  LocalTarget: {x: 0, y: 0, z: 0}
-  FlockCenter: {x: 0, y: 0, z: 0}
-  FlockVelocity: {x: 0, y: 0, z: 0}
-  TimeOfDayActive: 0
 --- !u!114 &242262684 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114125333266826324, guid: 49f6a66fc0a117b42b6672b6295f4b61,
@@ -2849,7 +2777,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 678990703}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &564815061
 MonoBehaviour:
@@ -2869,7 +2797,7 @@ MonoBehaviour:
   FlockSize: 18
   MinVelocity: 3
   MaxVelocity: 4
-  RotationSpeed: 1
+  RotationSpeed: 0.1
   Randomness: 10
   MinTargetMoveSpeed: 10
   MaxTargetMoveSpeed: 20
@@ -2885,9 +2813,9 @@ MonoBehaviour:
   UseAvoidance: 0
   AvoidanceDistance: 20
   AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
+  UseTimeOfDay: 1
+  OnTimeStart: 12
+  OffTimeEnd: 24
   TimeOfDaySpawnPoint: {fileID: 0}
   SidewaysFish: 1
   LocalTarget: {x: 0, y: 0, z: 0}
@@ -3013,7 +2941,6 @@ Transform:
   - {fileID: 1323109369}
   - {fileID: 143877666}
   - {fileID: 1517710822}
-  - {fileID: 228375642}
   - {fileID: 1699717498}
   - {fileID: 564815060}
   - {fileID: 1398439064}
@@ -3067,7 +2994,7 @@ MonoBehaviour:
   FlockSize: 15
   MinVelocity: 2
   MaxVelocity: 3
-  RotationSpeed: 1
+  RotationSpeed: 0.1
   Randomness: 10
   MinTargetMoveSpeed: 10
   MaxTargetMoveSpeed: 20
@@ -3083,9 +3010,9 @@ MonoBehaviour:
   UseAvoidance: 0
   AvoidanceDistance: 20
   AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
+  UseTimeOfDay: 1
+  OnTimeStart: 0
+  OffTimeEnd: 12
   TimeOfDaySpawnPoint: {fileID: 0}
   SidewaysFish: 1
   LocalTarget: {x: 0, y: 0, z: 0}
@@ -3723,7 +3650,7 @@ MonoBehaviour:
   FlockSize: 20
   MinVelocity: 3
   MaxVelocity: 4
-  RotationSpeed: 1
+  RotationSpeed: 0.1
   Randomness: 10
   MinTargetMoveSpeed: 10
   MaxTargetMoveSpeed: 20
@@ -3739,9 +3666,9 @@ MonoBehaviour:
   UseAvoidance: 0
   AvoidanceDistance: 20
   AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
+  UseTimeOfDay: 1
+  OnTimeStart: 0
+  OffTimeEnd: 12
   TimeOfDaySpawnPoint: {fileID: 0}
   SidewaysFish: 1
   LocalTarget: {x: 0, y: 0, z: 0}
@@ -5136,7 +5063,7 @@ MonoBehaviour:
   FlockSize: 12
   MinVelocity: 2
   MaxVelocity: 3
-  RotationSpeed: 1
+  RotationSpeed: 0.1
   Randomness: 10
   MinTargetMoveSpeed: 10
   MaxTargetMoveSpeed: 20
@@ -5152,9 +5079,9 @@ MonoBehaviour:
   UseAvoidance: 0
   AvoidanceDistance: 20
   AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
+  UseTimeOfDay: 1
+  OnTimeStart: 0
+  OffTimeEnd: 12
   TimeOfDaySpawnPoint: {fileID: 0}
   SidewaysFish: 1
   LocalTarget: {x: 0, y: 0, z: 0}
@@ -5426,7 +5353,7 @@ MonoBehaviour:
   FlockSize: 12
   MinVelocity: 1
   MaxVelocity: 2
-  RotationSpeed: 1
+  RotationSpeed: 0.1
   Randomness: 10
   MinTargetMoveSpeed: 10
   MaxTargetMoveSpeed: 20
@@ -5442,9 +5369,9 @@ MonoBehaviour:
   UseAvoidance: 0
   AvoidanceDistance: 20
   AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
+  UseTimeOfDay: 1
+  OnTimeStart: 0
+  OffTimeEnd: 12
   TimeOfDaySpawnPoint: {fileID: 0}
   SidewaysFish: 1
   LocalTarget: {x: 0, y: 0, z: 0}
@@ -5561,7 +5488,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 678990703}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1398439065
 MonoBehaviour:
@@ -5581,7 +5508,7 @@ MonoBehaviour:
   FlockSize: 20
   MinVelocity: 2
   MaxVelocity: 3
-  RotationSpeed: 1
+  RotationSpeed: 0.1
   Randomness: 10
   MinTargetMoveSpeed: 10
   MaxTargetMoveSpeed: 20
@@ -5597,9 +5524,9 @@ MonoBehaviour:
   UseAvoidance: 0
   AvoidanceDistance: 20
   AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
+  UseTimeOfDay: 1
+  OnTimeStart: 12
+  OffTimeEnd: 24
   TimeOfDaySpawnPoint: {fileID: 0}
   SidewaysFish: 1
   LocalTarget: {x: 0, y: 0, z: 0}
@@ -5916,7 +5843,7 @@ MonoBehaviour:
   FlockSize: 20
   MinVelocity: 3
   MaxVelocity: 6
-  RotationSpeed: 1
+  RotationSpeed: 0.1
   Randomness: 20
   MinTargetMoveSpeed: 10
   MaxTargetMoveSpeed: 20
@@ -5932,9 +5859,9 @@ MonoBehaviour:
   UseAvoidance: 0
   AvoidanceDistance: 20
   AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
+  UseTimeOfDay: 1
+  OnTimeStart: 12
+  OffTimeEnd: 24
   TimeOfDaySpawnPoint: {fileID: 0}
   SidewaysFish: 1
   LocalTarget: {x: 0, y: 0, z: 0}
@@ -6932,7 +6859,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 678990703}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1699717499
 MonoBehaviour:
@@ -6952,7 +6879,7 @@ MonoBehaviour:
   FlockSize: 15
   MinVelocity: 3
   MaxVelocity: 6
-  RotationSpeed: 1
+  RotationSpeed: 0.1
   Randomness: 10
   MinTargetMoveSpeed: 10
   MaxTargetMoveSpeed: 20
@@ -6968,9 +6895,9 @@ MonoBehaviour:
   UseAvoidance: 0
   AvoidanceDistance: 20
   AvoidanceOffset: 3
-  UseTimeOfDay: 0
-  OnTimeStart: 8
-  OffTimeEnd: 17
+  UseTimeOfDay: 1
+  OnTimeStart: 12
+  OffTimeEnd: 24
   TimeOfDaySpawnPoint: {fileID: 0}
   SidewaysFish: 1
   LocalTarget: {x: 0, y: 0, z: 0}

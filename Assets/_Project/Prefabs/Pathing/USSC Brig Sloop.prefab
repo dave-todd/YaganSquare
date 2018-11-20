@@ -633,8 +633,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4255000556397114}
-  - component: {fileID: 54191259189551172}
-  - component: {fileID: 65693232626082034}
   - component: {fileID: 114056592374139402}
   m_Layer: 0
   m_Name: USSC Brig Sloop Model
@@ -2447,33 +2445,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1840077293667976}
   m_Mesh: {fileID: 4300064, guid: 81f3769ab2b82604aad39f57de409e99, type: 3}
---- !u!54 &54191259189551172
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812871502142502}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 2
-  m_AngularDrag: 0.07
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &65693232626082034
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812871502142502}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 1, z: 20}
-  m_Center: {x: 0, y: -1, z: 0}
 --- !u!114 &114056592374139402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2492,4 +2463,8 @@ MonoBehaviour:
   - {fileID: 1699458291234718}
   - {fileID: 1206448962489176}
   - {fileID: 1326595491201940}
+  UseTimeOfDay: 0
+  SkyController: {fileID: 0}
+  OnTimeStart: 8
+  OffTimeEnd: 17
   ReverseFacing: 0
