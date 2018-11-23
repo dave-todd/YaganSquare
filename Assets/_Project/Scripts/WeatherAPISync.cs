@@ -10,6 +10,7 @@ public class WeatherAPISync : MonoBehaviour
 {
     [SerializeField] private AzureSkyController skyController;
     [SerializeField] private WindZone windZone;
+    [SerializeField] private Clock clockArrow;
 
     [Tooltip("Rate at which the weather data is updated (in hours). URL is updated hourly.")]
     [SerializeField] private int updateRateInHours = 1;
@@ -73,12 +74,15 @@ public class WeatherAPISync : MonoBehaviour
 
     private void UpdateTime()
     {
+        var date = DateTime.Now;
         timeValue.text = DateTime.Now.ToString("h:mmtt", CultureInfo.InvariantCulture);
+        clockArrow.UpdateTime(date.Hour, date.Minute);
     }
 
     IEnumerator RefreshWeatherData()
     {
-        string url = "http://api.openweathermap.org/data/2.5/find?q=Perth,AU&type=accurate&mode=xml&lang=nl&units=metric&appid=4507f625dc92072478bb520490452c4f";
+        //string url = "http://api.openweathermap.org/data/2.5/find?q=Perth,AU&type=accurate&mode=xml&lang=nl&units=metric&appid=4507f625dc92072478bb520490452c4f";
+        string url = "https://yagan.core.iion.cloud/bridge/?key=4507f625dc92072478bb520490452c4f&uri=" + WWW.EscapeURL("http://api.openweathermap.org/data/2.5/find?q=Perth,AU&type=accurate&mode=xml&lang=nl&units=metric&appid=4507f625dc92072478bb520490452c4f");
         WWW www = new WWW(url);
         yield return www;
         if (www.error == null)

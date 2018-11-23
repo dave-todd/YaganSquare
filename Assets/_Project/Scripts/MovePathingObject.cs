@@ -24,7 +24,7 @@ public class MovePathingObject : MonoBehaviour
     {
         MoveToCurrentWayPoint();
         IncrementCurrentWayPoint();
-        StartCoroutine(DelayedStart()); 
+        StartCoroutine(DelayedStart());
     }
 
     private IEnumerator DelayedStart()
@@ -51,11 +51,21 @@ public class MovePathingObject : MonoBehaviour
 
     void SetVisable(bool visable)
     {
-        Renderer[] children = GetComponentsInChildren<Renderer>();
-
-        foreach (Renderer renderer in children)
+        Transform[] children = GetComponentsInChildren<Transform>();
+        foreach (Transform transform in children)
         {
-            renderer.enabled = visable;
+            Light light = transform.GetComponent<Light>();
+            Renderer renderer = transform.gameObject.GetComponent<Renderer>() as Renderer;
+
+            if (renderer != null)
+            {
+                renderer.enabled = visable;
+            }
+
+            if (light != null)
+            {
+                light.enabled = visable;
+            }
         }
     }
 
@@ -70,7 +80,7 @@ public class MovePathingObject : MonoBehaviour
         }
         else if (OnTimeStart > OffTimeEnd) // if start time comes after end time (night fish)
         {
-            if (hour > OffTimeEnd && hour <= OnTimeStart) { SetVisable(false); } // if we are outside active time range and still active
+            if (hour >= OffTimeEnd && hour < OnTimeStart) { SetVisable(false); } // if we are outside active time range and still active
             else { SetVisable(true); } // if we are in active time range and not active
         }
     }
